@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --primary-color: #4a90e2; /* 하늘색 시그니처 색상 */
+    --primary-hover: #3a7bca; /* 호버 시 더 진한 색상 */
+    --secondary-color: #6badf7; /* 더 연한 하늘색 */
+    --accent-color: #2c5ea3; /* 강조색 */
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #2c5ea3; /* 푸터 배경 색상 변경 */
+    --error-color: #f44336;
+    --success-color: #4caf50;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 마이페이지 섹션 스타일 */
+.mypage-section {
+    padding: 50px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+}
+
+.mypage-content {
+    display: flex;
+    gap: 30px;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* 방문기록 스타일 */
+.visits-container {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.form-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* 방문기록 탭 */
+.visits-tabs {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.visits-tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    border-right: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.visits-tab:last-child {
+    border-right: none;
+}
+
+.visits-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.visits-tab:hover:not(.active) {
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+/* 필터링 옵션 */
+.visit-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* 방문기록 카드 */
+.visit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* 스크롤바 스타일 */
+.visit-cards::-webkit-scrollbar {
+    width: 6px;
+}
+
+.visit-cards::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.visit-cards::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.visit-cards::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+.visit-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.visit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.visit-image {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.visit-content {
+    padding: 15px;
+}
+
+.visit-status {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.status-reviewed {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.status-not-reviewed {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
+.visit-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.restaurant-category {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.visit-details {
+    margin-top: 10px;
+}
+
+.detail-item {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.detail-label {
+    width: 70px;
+    color: #777;
+    font-weight: 500;
+}
+
+.visit-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-review {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.btn-review:hover {
+    background-color: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.btn-delete:hover {
+    background-color: rgba(244, 67, 54, 0.2);
+    transform: translateY(-2px);
+}
+
+.review-completed {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+    border: 1px solid #2196f3;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.no-visits {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+}
+
+.no-visits i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+}
+
+.page-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.page-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-item:hover:not(.active) {
+    background-color: rgba(74, 144, 226, 0.1);
+    transform: translateY(-2px);
+}
+
+/* 탭 컨텐츠 표시/숨김 */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .mypage-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .visit-cards {
+        grid-template-columns: 1fr;
+        max-height: none;
+    }
+
+    .visits-tabs {
+        flex-wrap: wrap;
+    }
+
+    .visits-tab {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .visit-filters {
+        flex-direction: column;
+    }
+
+    .filter-select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .visit-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}

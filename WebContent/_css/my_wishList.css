@@ -1,0 +1,580 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --primary-color: #4a90e2; /* 하늘색 시그니처 색상 */
+    --primary-hover: #3a7bca; /* 호버 시 더 진한 색상 */
+    --secondary-color: #6badf7; /* 더 연한 하늘색 */
+    --accent-color: #2c5ea3; /* 강조색 */
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #2c5ea3; /* 푸터 배경 색상 변경 */
+    --error-color: #f44336;
+    --success-color: #4caf50;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 헤더 스타일 */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* 메뉴 네비게이션 스타일 */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a:focus {
+    background-color: rgba(74, 144, 226, 0.1);
+    color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.main-nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* 마이페이지 스타일 */
+.mypage-section {
+    padding: 50px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+}
+
+.mypage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.mypage-header h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 15px;
+}
+
+.mypage-header h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 80%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.mypage-content {
+    display: flex;
+    gap: 30px;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* 찜한 맛집 컨텐츠 스타일 */
+.favorites-container {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+}
+
+.form-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.favorites-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    flex-grow: 0;
+}
+
+.search-container {
+    display: flex;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ddd;
+    border-right: none;
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.favorites-count {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.count-number {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 찜한 맛집 카드 스타일 */
+.favorite-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: calc(100vh - 350px); /* 높이 제한 설정 */
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    padding-right: 5px; /* 스크롤바 공간 확보 */
+}
+
+/* 스크롤바 스타일링 */
+.favorite-cards::-webkit-scrollbar {
+    width: 8px;
+}
+
+.favorite-cards::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.favorite-cards::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 10px;
+}
+
+.favorite-cards::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
+
+.favorite-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-header {
+    position: relative;
+}
+
+.favorite-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.favorite-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.favorite-toggle i {
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.favorite-toggle.active i {
+    color: #ff5a5f;
+}
+
+.favorite-toggle:hover {
+    transform: scale(1.1);
+}
+
+.favorite-content {
+    padding: 15px;
+}
+
+.favorite-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.restaurant-category {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.restaurant-rating {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #ff9800;
+}
+
+.restaurant-rating i {
+    margin-right: 3px;
+}
+
+.review-count {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 400;
+    margin-left: 3px;
+}
+
+.restaurant-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.restaurant-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.restaurant-location i {
+    margin-right: 5px;
+    color: #666;
+}
+
+.restaurant-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: #f1f1f1;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 15px;
+    color: #666;
+}
+
+.favorite-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-view {
+    background-color: #f1f1f1;
+    color: var(--text-dark);
+}
+
+.btn-view:hover {
+    background-color: #e5e5e5;
+}
+
+.btn-reserve {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-reserve:hover {
+    background-color: var(--primary-hover);
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.page-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-item:hover {
+    background-color: #f1f1f1;
+}
+
+.page-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* 탭 컨텐츠 표시/숨김 */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+    .favorite-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .mypage-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .favorites-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .search-container {
+        width: 100%;
+    }
+    
+    .favorite-cards {
+        grid-template-columns: 1fr;
+        max-height: 500px; /* 모바일에서 높이 조정 */
+    }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.favorite-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 맛집 카테고리별 색상 구분 */
+.restaurant-category.korean {
+    background-color: #f44336;
+}
+
+.restaurant-category.japanese {
+    background-color: #9c27b0;
+}
+
+.restaurant-category.chinese {
+    background-color: #ff9800;
+}
+
+.restaurant-category.western {
+    background-color: #2196f3;
+}
+
+.restaurant-category.cafe {
+    background-color: #795548;
+}
+
+/* 찜 버튼 애니메이션 효과 개선 */
+.favorite-toggle {
+    transform-origin: center;
+}
+
+.favorite-toggle.active {
+    animation: heartBeat 0.5s ease;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 카드 호버 시 이미지 확대 효과 */
+.favorite-image {
+    transition: transform 0.5s ease;
+}
+
+.favorite-card:hover .favorite-image {
+    transform: scale(1.05);
+}
+
+/* 드롭다운 메뉴 스타일 개선 */
+.filter-select {
+    position: relative;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 35px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
