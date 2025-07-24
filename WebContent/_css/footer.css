@@ -1,0 +1,181 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --primary-color: #4a90e2; /* 하늘색 시그니처 색상 */
+    --primary-hover: #3a7bca; /* 호버 시 더 진한 색상 */
+    --secondary-color: #6badf7; /* 더 연한 하늘색 */
+    --accent-color: #2c5ea3; /* 강조색 */
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #2c5ea3; /* 푸터 배경 색상 변경 */
+}
+
+body {
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 푸터 스타일 */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: #ccc;
+    padding: 50px 0 30px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 12px;
+}
+
+.footer-column a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: white;
+    padding-left: 15px;
+}
+
+.footer-column a:hover::before {
+    left: 5px;
+}
+
+/* footer-column p 태그 스타일 추가 */
+.footer-column p {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.9rem;
+}
+
+/* Font Awesome 아이콘 스타일 */
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+}
+
+.fab.fa-facebook-f:before {
+    content: "\f39e";
+}
+
+.fab.fa-instagram:before {
+    content: "\f16d";
+}
+
+.fab.fa-twitter:before {
+    content: "\f099";
+}
+
+.fab.fa-youtube:before {
+    content: "\f167";
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

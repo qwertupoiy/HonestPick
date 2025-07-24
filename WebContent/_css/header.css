@@ -1,0 +1,293 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --header-primary-color: #4a90e2; /* 파란색 시그니처 색상 */
+    --header-primary-hover: #3a7bca; /* 호버 시 더 진한 파란색 */
+    --header-text-dark: #333;
+    --header-text-light: #666;
+    --header-bg-light: #f8f9fa;
+}
+
+body {
+    background-color: var(--header-bg-light);
+    color: var(--header-text-dark);
+    line-height: 1.6;
+}
+
+/* 헤더 전용 스타일 */
+.header-main {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.header-logo img {
+    height: 40px;
+}
+
+/* 메뉴 네비게이션 스타일 */
+.header-nav-list {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+    align-items: center;
+}
+
+.header-nav-item {
+    position: relative;
+}
+
+.header-nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* 메뉴 호버 효과 */
+.header-nav-link:hover, .header-nav-link:focus {
+    background-color: rgba(74, 144, 226, 0.1);
+    color: var(--header-primary-color);
+    box-shadow: 0 0 0 2px var(--header-primary-color);
+}
+
+.header-nav-link.active {
+    color: var(--header-primary-color);
+    font-weight: 600;
+}
+
+.header-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--header-primary-color);
+}
+
+.header-search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 4px 8px;
+    transition: all 0.3s ease;
+}
+
+.header-search-container:hover, .header-search-container:focus-within {
+    border-color: var(--header-primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.header-search-input {
+    border: none;
+    outline: none;
+    width: 130px;
+    font-size: 13px;
+}
+
+.header-search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.header-search-button:hover {
+    color: var(--header-primary-color);
+}
+
+.header-auth-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 심플한 사용자 인사말 스타일 */
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--header-text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.user-welcome .welcome-icon {
+    color: var(--header-primary-color);
+    font-size: 16px;
+}
+
+.user-welcome .welcome-text {
+    color: var(--header-text-dark);
+    white-space: nowrap;
+}
+
+/* 기본 버튼 스타일 */
+.header-btn {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    border: none;
+    white-space: nowrap;
+}
+
+/* 파란색 기본 버튼 (로그인) */
+.header-btn-primary {
+    background-color: var(--header-primary-color);
+    color: white;
+}
+
+.header-btn-primary:hover {
+    background-color: var(--header-primary-hover);
+    transform: translateY(-1px);
+}
+
+/* 파란색 아웃라인 버튼 (회원가입, 마이페이지) */
+.header-btn-outline {
+    border: 1px solid var(--header-primary-color);
+    color: var(--header-primary-color);
+    background: transparent;
+}
+
+.header-btn-outline:hover {
+    background-color: var(--header-primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* 심플한 가게 등록 버튼 */
+.header-btn-register {
+    background: transparent;
+    color: var(--header-primary-color);
+    font-weight: 600;
+    border: none;
+}
+
+.header-btn-register:hover {
+    color: var(--header-primary-hover);
+    transform: translateY(-1px);
+}
+
+/* 심플한 로그아웃 버튼 */
+.header-btn-logout {
+    background-color: var(--header-text-light);
+    color: white;
+}
+
+.header-btn-logout:hover {
+    background-color: var(--header-text-dark);
+    transform: translateY(-1px);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+    .header-nav-list {
+        gap: 8px;
+    }
+    
+    .header-nav-link {
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+    
+    .header-search-input {
+        width: 110px;
+        font-size: 12px;
+    }
+    
+    .header-auth-buttons {
+        gap: 6px;
+    }
+    
+    .header-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+        gap: 3px;
+    }
+    
+    .user-welcome .welcome-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .header-search-container {
+        margin-top: 10px;
+    }
+    
+    .header-auth-buttons {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .user-welcome .welcome-text {
+        font-size: 13px;
+    }
+
+    .header-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-search-input {
+        width: 120px;
+    }
+
+    .user-welcome .welcome-text {
+        font-size: 12px;
+    }
+
+    .header-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+        gap: 3px;
+    }
+}
