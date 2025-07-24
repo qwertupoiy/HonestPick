@@ -1,0 +1,15 @@
+# Eclipse 관련 파일/폴더
+.settings/
+.classpath
+.project
+
+# 빌드 결과물
+build/
+target/
+
+# 자바 컴파일 결과
+*.class
+
+# OS 임시 파일
+.DS_Store
+Thumbs.db
