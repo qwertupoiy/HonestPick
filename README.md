@@ -37,4 +37,4 @@
 - [프로젝트 소개 자료 다운로드 (PDF)](https://drive.google.com/file/d/17fujddKVnLxMY6W3MY2no9gvSD2rdjTl/view?usp=sharing)
 
 ## 시연 영상
-- [프로젝트 시연 영상 보기](https://drive.google.com/file/d/1bDkzHl1yo9qC2cL4pnf8bBQMRf2Ma54k/view?usp=sharing))
+- [프로젝트 시연 영상 보기](https://drive.google.com/file/d/1bDkzHl1yo9qC2cL4pnf8bBQMRf2Ma54k/view?usp=sharing)
