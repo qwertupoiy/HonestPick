@@ -33,5 +33,8 @@
 - 외부 API 연동을 통해 사용자 경험을 확장하고 실제 서비스에 가까운 구조로 설계
 - 데이터베이스 설계와 복잡한 JOIN 처리 경험을 통해 효율적인 데이터 조회를 구현
 
-## 결과보고서 ppt
--[프로젝트 소개 자료 다운로드 (PDF)](https://drive.google.com/file/d/17fujddKVnLxMY6W3MY2no9gvSD2rdjTl/view?usp=sharing)
+## 발표 자료 (PDF)
+- [프로젝트 소개 자료 다운로드 (PDF)](https://drive.google.com/file/d/17fujddKVnLxMY6W3MY2no9gvSD2rdjTl/view?usp=sharing)
+
+## 시연 영상
+- [프로젝트 시연 영상 보기](https://drive.google.com/file/d/1bDkzHl1yo9qC2cL4pnf8bBQMRf2Ma54k/view?usp=sharing))
