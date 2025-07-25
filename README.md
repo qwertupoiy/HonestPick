@@ -32,3 +32,6 @@
 - JSP/Servlet을 기능별로 구조화하고 URL을 RESTful하게 구성
 - 외부 API 연동을 통해 사용자 경험을 확장하고 실제 서비스에 가까운 구조로 설계
 - 데이터베이스 설계와 복잡한 JOIN 처리 경험을 통해 효율적인 데이터 조회를 구현
+
+## 결과보고서 ppt
+-[프로젝트 소개 자료 다운로드 (PDF)](https://drive.google.com/file/d/17fujddKVnLxMY6W3MY2no9gvSD2rdjTl/view?usp=sharing)
