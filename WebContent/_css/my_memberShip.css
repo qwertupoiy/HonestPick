@@ -1,0 +1,871 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover: #3a7bca;
+    --secondary-color: #6badf7;
+    --accent-color: #2c5ea3;
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #2c5ea3;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --gold-color: #ffd700;
+    --purple-color: #8e44ad;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+.membership-main {
+    padding: 40px 0 50px 0;
+}
+
+/* 페이지 헤더 */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px 0;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-header h1 i {
+    color: var(--gold-color);
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 혜택 섹션 */
+.benefits-section {
+    margin-bottom: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.benefits-section .section-header {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.benefits-section .section-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.benefits-section .section-header h2 i {
+    color: var(--primary-color);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 15px 10px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.05);
+}
+
+.benefit-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.benefit-card p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 멤버십 콘텐츠 레이아웃 - 세로 배치로 변경 */
+.membership-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 멤버십 왼쪽 영역 (플랜 선택) */
+.membership-left {
+    width: 100%;
+}
+
+/* 멤버십 오른쪽 영역 (주문요약, 결제방법, 약관동의) - 가로 배치 */
+.membership-right {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.membership-right .membership-section {
+    flex: 1;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.membership-right .section-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 섹션 스타일 */
+.membership-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.membership-section:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.section-header {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.section-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header h2 i {
+    color: var(--primary-color);
+}
+
+.section-content {
+    padding: 20px;
+}
+
+/* 플랜 그리드 - 가로 한줄로 변경 */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.plan-card {
+    position: relative;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    cursor: pointer;
+}
+
+.plan-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.plan-card.selected {
+    border-color: var(--primary-color);
+    background: #f8fbff;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+    transform: translateY(-2px);
+}
+
+.plan-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.plan-label {
+    display: block;
+    padding: 20px 15px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.plan-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.plan-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.plan-badge.popular {
+    background: #dc3545;
+    color: white;
+}
+
+.plan-badge.recommended {
+    background: var(--success-color);
+    color: white;
+}
+
+.plan-badge.best {
+    background: var(--gold-color);
+    color: #333;
+}
+
+.plan-badge:not(.popular):not(.recommended):not(.best) {
+    background: #6c757d;
+    color: white;
+}
+
+.plan-price {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.original-price {
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 6px;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.currency {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.plan-period {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.discount {
+    color: #dc3545;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features li {
+    padding: 4px 0;
+    font-size: 0.8rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.plan-features li i {
+    color: var(--success-color);
+    font-size: 0.7rem;
+    width: 10px;
+}
+
+/* 선택된 플랜 카드 효과 */
+.plan-card.selected .plan-label {
+    position: relative;
+}
+
+.plan-card.selected::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    animation: checkPop 0.3s ease;
+}
+
+@keyframes checkPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* 주문 요약 */
+.order-summary {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.selected-plan h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.plan-details {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.plan-details p {
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.85rem;
+}
+
+.discount-row {
+    color: var(--danger-color);
+}
+
+.discount-text {
+    font-weight: 600;
+}
+
+.total-row {
+    border-top: 1px solid #dee2e6;
+    padding-top: 10px;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.final-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 결제 방법 */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    position: relative;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.payment-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.payment-label:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.1);
+}
+
+.payment-option input:checked + .payment-label {
+    border-color: var(--primary-color);
+    background: #f8fbff;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.15);
+}
+
+.payment-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.payment-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.payment-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+/* 약관 동의 */
+.agreement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.agreement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.agreement-item input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.agreement-item label {
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.required {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+.optional {
+    color: #999;
+    font-weight: 500;
+}
+
+.terms-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-size: 0.85rem;
+    margin-left: auto;
+}
+
+.terms-link:hover {
+    color: var(--primary-hover);
+}
+
+.agreement-all {
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.agreement-all input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.agree-all-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* 버튼 스타일 */
+.btn-primary,
+.btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 160px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.2);
+}
+
+/* 폼 액션 버튼 */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 25px 0;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .membership-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .membership-right .membership-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .membership-main {
+        padding: 20px 0 40px 0;
+    }
+    
+    .page-header {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .page-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .benefit-card {
+        padding: 12px 8px;
+    }
+    
+    .section-content {
+        padding: 15px;
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .plan-label {
+        padding: 15px 12px;
+    }
+    
+    .plan-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .price {
+        font-size: 1.4rem;
+    }
+    
+    .membership-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .membership-right .membership-section {
+        margin-bottom: 20px;
+    }
+    
+    .payment-label {
+        padding: 10px;
+    }
+    
+    .payment-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .benefits-section .section-header {
+        padding: 12px;
+    }
+    
+    .section-header {
+        padding: 12px 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1rem;
+    }
+    
+    .section-content {
+        padding: 12px;
+    }
+    
+    .plan-price {
+        margin-bottom: 6px;
+    }
+    
+    .price {
+        font-size: 1.3rem;
+    }
+    
+    .plan-features li {
+        font-size: 0.75rem;
+        padding: 3px 0;
+    }
+    
+    .agreement-item label {
+        font-size: 0.8rem;
+    }
+    
+    .payment-info h4 {
+        font-size: 0.85rem;
+    }
+    
+    .payment-info p {
+        font-size: 0.75rem;
+    }
+}
+
+/* 애니메이션 효과 */
+.membership-section {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.plan-card {
+    animation: fadeInScale 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 플랜 선택 애니메이션 */
+.plan-card.selecting {
+    animation: planSelect 0.3s ease;
+}
+
+@keyframes planSelect {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+}
