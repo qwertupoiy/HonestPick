@@ -64,6 +64,7 @@ WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
     maxActive="20"
     maxIdle="10"
     maxWait="-1"/>
+'''
 
 ## DB 초기화
 sql/HonestPick_create.sql 실행 → 테이블 및 시퀀스 생성  
