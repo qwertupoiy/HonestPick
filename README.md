@@ -79,5 +79,5 @@ http://localhost:8081/HonestPick/Home_servlet/home.do
 점주: hong123 / wjdwlr123#  
 일반 사용자: minsu123 / wjdwlr123#  
 
-## 실행 화면
+## 홈 화면
 <img width="954" height="1278" alt="image" src="https://github.com/user-attachments/assets/c43b11a4-01fd-416e-899a-1796d6db96f6" />
