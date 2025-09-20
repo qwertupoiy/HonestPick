@@ -41,16 +41,16 @@
 
 ## 실행 방법 (Getting Started)
 ### Prerequisites
-JDK: 11.0.26+4
-Apache Tomcat: 9.0
-Database: Oracle (XE/Standard/Enterprise 버전 가능)
-IDE: Eclipse (또는 IntelliJ)
+JDK: 11.0.26+4  
+Apache Tomcat: 9.0  
+Database: Oracle (XE/Standard/Enterprise 버전 가능)  
+IDE: Eclipse (또는 IntelliJ)  
 
 ## 프로젝트 설정
-저장소 클론
-git clone https://github.com/qwertupoiy/HonestPick.git
-Eclipse/IntelliJ에서 Dynamic Web Project(또는 Maven Import)로 불러오기
-WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
+저장소 클론  
+git clone https://github.com/qwertupoiy/HonestPick.git  
+Eclipse/IntelliJ에서 Dynamic Web Project(또는 Maven Import)로 불러오기  
+WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력  
 
 <Resource
     name="jdbc/HonestPick"
@@ -65,16 +65,16 @@ WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
     maxWait="-1"/>
 
 ## DB 초기화
-sql/HonestPick_create.sql 실행 → 테이블 및 시퀀스 생성
-sql/HonestPick_insert.sql 실행 → 샘플 데이터 삽입
+sql/HonestPick_create.sql 실행 → 테이블 및 시퀀스 생성  
+sql/HonestPick_insert.sql 실행 → 샘플 데이터 삽입  
 
 ▶ 실행
-Tomcat 9 서버에 프로젝트 배포 (Run on Server)
-Java Resource / src / home / controller / HomeController.java 실행
-브라우저에서 접속
-http://localhost:8081/HonestPick/Home_servlet/home.do
+Tomcat 9 서버에 프로젝트 배포 (Run on Server)  
+Java Resource / src / home / controller / HomeController.java 실행  
+브라우저에서 접속  
+http://localhost:8081/HonestPick/Home_servlet/home.do  
 
 ▶ 테스트 계정
-관리자: create0508 / wjdwlr123#
-점주: hong123 / wjdwlr123#
-일반 사용자: minsu123 / wjdwlr123#
+관리자: create0508 / wjdwlr123#  
+점주: hong123 / wjdwlr123#  
+일반 사용자: minsu123 / wjdwlr123#  
