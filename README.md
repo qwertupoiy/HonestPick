@@ -40,17 +40,19 @@
 ▶ [프로젝트 시연 영상 보기](https://drive.google.com/file/d/1bDkzHl1yo9qC2cL4pnf8bBQMRf2Ma54k/view?usp=sharing)
 
 ## 실행 방법 (Getting Started)
-### Prerequisites
-JDK: 11.0.26+4  
-Apache Tomcat: 9.0  
-Database: Oracle (XE/Standard/Enterprise 버전 가능)  
-IDE: Eclipse (또는 IntelliJ)  
 
-## 프로젝트 설정
-저장소 클론  
-git clone https://github.com/qwertupoiy/HonestPick.git  
+### 1. Prerequisites
+- JDK: 11.0.26+4  
+- Apache Tomcat: 9.0  
+- Database: Oracle (XE/Standard/Enterprise)  
+- IDE: Eclipse 또는 IntelliJ  
+
+### 2. 프로젝트 설정
+```bash
+git clone https://github.com/qwertupoiy/HonestPick.git
 Eclipse/IntelliJ에서 Dynamic Web Project(또는 Maven Import)로 불러오기  
-WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력  
+WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
+```
 
 ```xml
 <Resource
