@@ -52,6 +52,7 @@ git clone https://github.com/qwertupoiy/HonestPick.git
 Eclipse/IntelliJ에서 Dynamic Web Project(또는 Maven Import)로 불러오기  
 WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력  
 
+'''xml
 <Resource
     name="jdbc/HonestPick"
     auth="Container"
