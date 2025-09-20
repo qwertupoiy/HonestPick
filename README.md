@@ -52,7 +52,8 @@ git clone https://github.com/qwertupoiy/HonestPick.git
 Eclipse/IntelliJ에서 Dynamic Web Project(또는 Maven Import)로 불러오기  
 WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력  
 
-[Resource
+```xml
+<Resource
     name="jdbc/HonestPick"
     auth="Container"
     type="javax.sql.DataSource"
@@ -62,7 +63,8 @@ WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
     password="1234"
     maxActive="20"
     maxIdle="10"
-    maxWait="-1"/]
+    maxWait="-1"/>
+```
 
 ## DB 초기화
 sql/HonestPick_create.sql 실행 → 테이블 및 시퀀스 생성  
