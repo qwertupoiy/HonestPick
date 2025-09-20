@@ -68,13 +68,16 @@ WebContent/META-INF/context.xml에 Oracle DB 연결 정보 입력
 sql/HonestPick_create.sql 실행 → 테이블 및 시퀀스 생성  
 sql/HonestPick_insert.sql 실행 → 샘플 데이터 삽입  
 
-▶ 실행
+▶ 실행  
 Tomcat 9 서버에 프로젝트 배포 (Run on Server)  
 Java Resource / src / home / controller / HomeController.java 실행  
 브라우저에서 접속  
 http://localhost:8081/HonestPick/Home_servlet/home.do  
 
-▶ 테스트 계정
+▶ 테스트 계정  
 관리자: create0508 / wjdwlr123#  
 점주: hong123 / wjdwlr123#  
 일반 사용자: minsu123 / wjdwlr123#  
+
+## 실행 화면
+<img width="954" height="1278" alt="image" src="https://github.com/user-attachments/assets/c43b11a4-01fd-416e-899a-1796d6db96f6" />
